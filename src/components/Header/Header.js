@@ -7,11 +7,13 @@ function Header() {
   return (
     <header className="header">
       <div className="header__container">
+        <div>
         <img
           className="header__logo-img"
           src={logo}
           alt="BrainFlix logo image"
         />
+        </div>
         <div className="search-box">
           <img
             className="search-box__icon"
