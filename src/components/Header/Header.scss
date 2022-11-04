@@ -1,4 +1,113 @@
-@use '../../styles/partials/global' as *;
+@use '../../App.scss' as *;
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/fonts' as *;
+
+.header {
+  padding: 1rem;
+
+  @include tablet {
+    padding: 1rem 2.25rem;
+  }
+
+  @include desktop {
+    padding: 0;
+    width: 63.75rem;
+    margin: 1rem auto;
+  }
+
+  &__outer-container {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo-img {
+    display: block;
+    margin: 0 auto 1rem;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__inner-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    @include tablet {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__search-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.5rem;
+    padding: 0 0.5rem;
+    background-color: $secondary-mercury;
+    border-radius: 0.25rem;
+    border: .125rem solid $primary-silver;
+    flex-grow: 1;
+
+    @include tablet {
+      min-width: 15rem;
+    }
+  }
+  
+  &__search-text {
+    font-size: .8125rem;
+    align-self: center;
+    line-height: 1.25rem;
+    font-weight: 400;
+
+    @include tablet {
+      font-size: .875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__avatar-image {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: left;
+
+    @include tablet {
+      order: 1;
+      vertical-align: bottom;
+    }
+  }
+
+  &__upload-button {
+    color: $primary-white;
+    border: none;
+    width: 100%;
+    background-color: $primary-blue;
+    border-radius: .25rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+
+    @include tablet {
+      min-width: 9.375rem;
+    }
+
+    &:hover {
+      background-color: $secondary-blue;
+    }
+  }
+
+  &__upload-text {
+    width: calc(100% - 3rem);
+    font-size: .8125rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
