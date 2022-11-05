@@ -11,14 +11,14 @@ function Header() {
         <img
           className="header__logo-img"
           src={logo}
-          alt="BrainFlix logo image"
+          alt="BrainFlix Logo Image"
         />
         <div className="header__inner-container">
           <div className="header__search-box">
             <img
               className="header__search-icon"
               src={searchIcon}
-              alt="Search icon image for search box"
+              alt="Search Icon Image for Search Box"
             />
             <p className="header__search-text">Search</p>
           </div>
