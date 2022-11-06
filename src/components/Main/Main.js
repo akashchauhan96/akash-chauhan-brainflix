@@ -7,10 +7,10 @@ function Main({videoDetails}) {
       <HeroVideo
         videoDetails={videoDetails}
       />
-      {/* <VideoDescription
+      <VideoDescription
         videoDetails={videoDetails}
       />
-      <Comment 
+      {/* <Comment 
         videosData={videoDetails}
       /> */}
     </main>
