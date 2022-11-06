@@ -9,15 +9,16 @@ function Main({videoDetails}) {
       <HeroVideo
         videoDetails={videoDetails}
       />
-      <VideoDescription
-        videoDetails={videoDetails}
-      />
-      <Comments 
-        videoDetails={videoDetails}
-      />
-      {/* <CommentsArray
-        videoDetails={videoDetails.comments}  
-      /> */}
+      <div className='main-aside__wrapper'>
+        <div className='video-details__wrapper'>
+          <VideoDescription
+            videoDetails={videoDetails}
+          />
+          <Comments 
+            videoDetails={videoDetails}
+          />
+        </div>
+      </div>
     </main>
   )
 }

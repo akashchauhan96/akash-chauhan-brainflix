@@ -3,6 +3,7 @@ import Header from './components/Header/Header.js';
 import Main from './components/Main/Main.js'
 import videosData from './assets/data/videos.json'
 import videoDetails from './assets/data/video-details.json'
+import VideosReccomended from './components/VideosRecommended/VideosRecommended.js'
 import { useState } from 'react'
 
 function App() {
@@ -41,10 +42,10 @@ function App() {
         videoDetails={videoInfo}
         onCurrentVideo={showVideoDetails}
       />
-      {/* <VideosReccomend 
+      <VideosReccomended 
         videosData={videoArray}  
         onVideosRecommend={showVideoArray}
-      /> */}
+      />
     </>
   );
 }
