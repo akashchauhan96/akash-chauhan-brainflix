@@ -1,5 +1,6 @@
 import './Main.scss'
 import HeroVideo from '../HeroVideo/HeroVideo.js'
+import VideoDescription from '../VideoDescription/VideoDescription'
 
 function Main({videoDetails}) {
   return (
