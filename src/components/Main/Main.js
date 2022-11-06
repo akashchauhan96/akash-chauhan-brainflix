@@ -1,6 +1,7 @@
 import './Main.scss'
 import HeroVideo from '../HeroVideo/HeroVideo.js'
 import VideoDescription from '../VideoDescription/VideoDescription'
+import Comments from '../Comments/Comments'
 
 function Main({videoDetails}) {
   return (
@@ -11,9 +12,9 @@ function Main({videoDetails}) {
       <VideoDescription
         videoDetails={videoDetails}
       />
-      {/* <Comment 
-        videosData={videoDetails}
-      /> */}
+      <Comments 
+        videoDetails={videoDetails}
+      />
     </main>
   )
 }
