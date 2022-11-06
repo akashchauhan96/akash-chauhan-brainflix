@@ -1,11 +1,9 @@
 import './HeroVideo.scss'
-import { useState } from 'react'
 
-function HeroVideo() {
+function HeroVideo({videoDetails}) {
   return (
-    <section className=''>
-      <video controls>
-        <div></div>
+    <section className='hero' >
+      <video className='hero__video' controls poster={videoDetails.image}>
       </video>
     </section>
   )

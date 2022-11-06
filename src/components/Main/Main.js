@@ -1,14 +1,18 @@
 import './Main.scss'
 import HeroVideo from '../HeroVideo/HeroVideo.js'
-import VideoDescription from '../VideoDescription/VideoDescription.js'
-import Comment from '../Comment/Comment.js'
 
-function Main() {
+function Main({videoDetails}) {
   return (
     <main>
-      <HeroVideo videoSelect/>
-      <VideoDescription/>
-      <Comment videosData={videosData}/>
+      <HeroVideo
+        videoDetails={videoDetails}
+      />
+      {/* <VideoDescription
+        videoDetails={videoDetails}
+      />
+      <Comment 
+        videosData={videoDetails}
+      /> */}
     </main>
   )
 }
