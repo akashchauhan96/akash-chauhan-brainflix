@@ -15,6 +15,9 @@ function Main({videoDetails}) {
       <Comments 
         videoDetails={videoDetails}
       />
+      {/* <CommentsArray
+        videoDetails={videoDetails.comments}  
+      /> */}
     </main>
   )
 }

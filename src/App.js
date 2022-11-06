@@ -11,7 +11,7 @@ function App() {
     return video !== videoDetails[0];
   }))
 
-  console.log(videoDetails);
+  // console.log(videoDetails);
 
   function showVideoDetails(videoId) {
 
@@ -19,7 +19,7 @@ function App() {
       return video.id === videoId
   })
 
-  setVideoInfo(newVideoDetails);
+  // setVideoInfo(newVideoDetails);
 
   }
 
