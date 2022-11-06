@@ -1,8 +1,13 @@
 import './HeroVideo.scss'
+import { useState } from 'react'
 
 function HeroVideo() {
   return (
-    <h1></h1>
+    <section className=''>
+      <video controls>
+        <div></div>
+      </video>
+    </section>
   )
 }
 

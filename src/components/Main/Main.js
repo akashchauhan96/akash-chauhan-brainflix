@@ -5,9 +5,11 @@ import Comment from '../Comment/Comment.js'
 
 function Main() {
   return (
-    <HeroVideo/>
-    <VideoDescription/>
-    <Comment/>
+    <main>
+      <HeroVideo videoSelect/>
+      <VideoDescription/>
+      <Comment videosData={videosData}/>
+    </main>
   )
 }
 
