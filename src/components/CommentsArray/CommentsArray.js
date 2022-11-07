@@ -23,7 +23,7 @@ function CommentsArray({commentsList}) {
     <section className='comment-array'>
       {commentsList.map((comment) => {
         return (
-          <article className='comment-array__container'>
+          <article className='comment-array__container' key={comment.id}>
             <div className='comment-array__avatar-container'></div>
             <div className='comment-array__container-no-image'>
               <div className='comment-array__name-date-wrapper'>

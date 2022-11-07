@@ -4,7 +4,7 @@ import addComment from '../../assets/icons/add_comment.svg'
 import CommentsArray from '../CommentsArray/CommentsArray.js'
 
 function Comments({videoDetails}) {
-  // console.log(videoDetails);
+  console.log(videoDetails);
   return (
     <section className="comment-section">
       <p className='comment-section__total-number'>{videoDetails.comments.length} Comments</p>
@@ -40,7 +40,7 @@ function Comments({videoDetails}) {
           </form>
         </div>
       </div>
-      <CommentsArray 
+      <CommentsArray
         commentsList={videoDetails.comments}
       />
     </section>

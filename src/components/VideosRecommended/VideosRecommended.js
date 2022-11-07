@@ -1,8 +1,17 @@
 import './VideosRecommended.scss'
 
-function VideosRecommended() {
+function VideosRecommended({videosData, showVideoArray}) {
+  console.log(videosData);
   return (
-    <h1>Hello</h1>
+    <aside className='recommended-videos'>
+      <p className='recommended-videos__title'>Next Videos</p>
+      {videosData.map((videoItem) => {
+        <VideoItem 
+          videosData={videosData} 
+          showVideoArray={showVideoArray}
+        />
+      })}
+    </aside>
   )
 }
 
