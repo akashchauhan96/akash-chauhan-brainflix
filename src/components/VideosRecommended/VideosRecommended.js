@@ -1,7 +1,11 @@
 import './VideosRecommended.scss'
 import VideoItem from '../VideoItem/VideoItem.js'
 
-function VideosRecommended({videosData, showVideoArray}) {
+function VideosRecommended(props) {
+
+  const videosData = props.videosData;
+  console.log(videosData);
+  const showVideoArray = props.onVideosRecommended;
   console.log(showVideoArray);
   return (
     <aside className='recommended-videos'>

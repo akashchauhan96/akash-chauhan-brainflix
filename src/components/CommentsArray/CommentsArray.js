@@ -2,7 +2,6 @@ import './CommentsArray.scss'
 
 function CommentsArray({commentsList}) {
   
-  console.log(commentsList);
   
   function DateGenerator(date) {
     // console.log(date);

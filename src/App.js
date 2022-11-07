@@ -1,39 +1,43 @@
 import './App.scss';
 import Header from './components/Header/Header.js';
 import Main from './components/Main/Main.js'
-import HeroVideo from './components/HeroVideo/HeroVideo';
+import HeroVideo from './components/HeroVideo/HeroVideo.js';
+import VideosRecommended from './components/VideosRecommended/VideosRecommended.js'
 import videosData from './assets/data/videos.json'
 import videoDetails from './assets/data/video-details.json'
-import VideosReccomended from './components/VideosRecommended/VideosRecommended.js'
 import { useState } from 'react'
 
 function App() {
   const [videoInfo, setVideoInfo] = useState(videoDetails[0])
   const [videoArray, setVideoArray] = useState(videosData.filter((video) => {
-    return video !== videoDetails[0];
+    return video.id !== videoDetails[0].id;
   }))
 
-  // console.log(videoDetails);
+  // console.log(videoArray);
 
-  function showVideoDetails(videoId) {
+  // function showVideoDetails(videoId) {
 
-    const newVideoDetails = videoDetails.find((video) => {
-      return video.id === videoId
-  })
+  //   const newVideoDetails = videoDetails.find((video) => {
+  //     return video.id === videoId
+  //   })
 
-  // setVideoInfo(newVideoDetails);
+  //   setVideoInfo(newVideoDetails);
 
-  }
+  // }
 
   function showVideoArray(videoId) {
     const findCurrentVideo = videosData.find((video) => {
-      return video.id !== videoInfo.id
+      return video.id === videoInfo.id
     })
     const newVideoArray = videoArray.filter((video) => {
       return video.id !== videoId
     })
+    const newVideoDetails = videoDetails.find((video) => {
+      return video.id === videoId
+    })
 
-    setVideoArray([{findCurrentVideo}, ...newVideoArray]);
+    setVideoArray([findCurrentVideo, ...newVideoArray]);
+    setVideoInfo(newVideoDetails);
   }
   
   return (
@@ -46,9 +50,9 @@ function App() {
         <div className='main-aside__wrapper'>
           <Main 
             videoDetails={videoInfo}
-            onCurrentVideo={showVideoDetails}
+            // onCurrentVideo={showVideoDetails}
           />
-          <VideosReccomended 
+          <VideosRecommended 
             videosData={videoArray}  
             onVideosRecommended={showVideoArray}
           />
