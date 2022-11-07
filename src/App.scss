@@ -1,5 +1,6 @@
 @use './styles/partials/variables' as *;
 @use './styles/partials/fonts' as *;
+@use './styles/partials/mixins' as *;
 
 * {
   padding: 0;
@@ -11,4 +12,12 @@ body {
   font-family: "AvenirNextLTPro", sans-serif;
   background-color: $primary-white;
   color: $primary-black;
+}
+
+.main-aside__wrapper {
+  @include desktop {
+    display: flex;
+    width: 63.75rem;
+    margin: 0 auto;
+  }
 }

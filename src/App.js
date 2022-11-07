@@ -1,6 +1,7 @@
 import './App.scss';
 import Header from './components/Header/Header.js';
 import Main from './components/Main/Main.js'
+import HeroVideo from './components/HeroVideo/HeroVideo';
 import videosData from './assets/data/videos.json'
 import videoDetails from './assets/data/video-details.json'
 import VideosReccomended from './components/VideosRecommended/VideosRecommended.js'
@@ -38,14 +39,21 @@ function App() {
   return (
     <>
       <Header />
-      <Main 
+      <HeroVideo
         videoDetails={videoInfo}
-        onCurrentVideo={showVideoDetails}
       />
-      <VideosReccomended 
-        videosData={videoArray}  
-        onVideosRecommend={showVideoArray}
-      />
+      <main>
+        <div className='main-aside__wrapper'>
+          <Main 
+            videoDetails={videoInfo}
+            onCurrentVideo={showVideoDetails}
+          />
+          <VideosReccomended 
+            videosData={videoArray}  
+            onVideosRecommend={showVideoArray}
+          />
+        </div>
+      </main>  
     </>
   );
 }

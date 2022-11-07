@@ -23,12 +23,12 @@
     margin-bottom: 1rem;
   }
 
-  &__container {
-    @include desktop {
-      width: 63.75rem;
-      margin: 0 auto;
-    }
-  }
+  // &__container {
+  //   @include desktop {
+  //     width: 63.75rem;
+  //     margin: 0 auto;
+  //   }
+  // }
 
   &__title {
     color: $primary-silver;
@@ -51,9 +51,9 @@
     //   margin: 0 3.75rem;
     // }
 
-    @include desktop {
-      margin: 0 16rem;
-    }
+    // @include desktop {
+    //   margin: 0 16rem;
+    // }
   }
 
   &__avatar-container {
