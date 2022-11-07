@@ -50,7 +50,7 @@ function App() {
           />
           <VideosReccomended 
             videosData={videoArray}  
-            onVideosRecommend={showVideoArray}
+            onVideosRecommended={showVideoArray}
           />
         </div>
       </main>  

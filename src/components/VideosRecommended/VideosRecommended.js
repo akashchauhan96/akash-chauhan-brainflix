@@ -1,16 +1,25 @@
 import './VideosRecommended.scss'
+import VideoItem from '../VideoItem/VideoItem.js'
 
 function VideosRecommended({videosData, showVideoArray}) {
-  console.log(videosData);
+  console.log(showVideoArray);
   return (
     <aside className='recommended-videos'>
       <p className='recommended-videos__title'>Next Videos</p>
-      {videosData.map((videoItem) => {
-        <VideoItem 
-          videosData={videosData} 
-          showVideoArray={showVideoArray}
-        />
-      })}
+      <div className='recommended-videos__list'>
+        {videosData.map((videoItem) => {
+          return (
+            <VideoItem 
+              key={videoItem.id}
+              id={videoItem.id}
+              title={videoItem.title}
+              channel={videoItem.channel}
+              image={videoItem.image}
+              showVideoArray={showVideoArray}
+            />
+          )
+        })}
+      </div>
     </aside>
   )
 }
