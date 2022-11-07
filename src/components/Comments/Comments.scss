@@ -23,13 +23,6 @@
     margin-bottom: 1rem;
   }
 
-  // &__container {
-  //   @include desktop {
-  //     width: 63.75rem;
-  //     margin: 0 auto;
-  //   }
-  // }
-
   &__title {
     color: $primary-silver;
     font-size: .8125rem;
@@ -46,14 +39,15 @@
     display: flex;
     gap: 1rem;
     border-bottom: 1px solid $secondary-mercury;
+    padding-bottom: 1rem;
 
-    // @include tablet {
-    //   margin: 0 3.75rem;
-    // }
+    @include tablet {
+      padding: 0;
+    }
 
-    // @include desktop {
-    //   margin: 0 16rem;
-    // }
+    @include desktop {
+      padding: 0 1.5rem 0 0;
+    }
   }
 
   &__avatar-container {

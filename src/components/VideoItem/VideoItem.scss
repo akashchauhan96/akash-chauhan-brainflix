@@ -26,7 +26,10 @@
     font-size: .8125rem;
     font-weight: 700;
     color: $primary-black;
-    flex-wrap: wrap;
+    width: 10rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
   }
   &__video-channel {
     font-size: .8125rem;

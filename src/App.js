@@ -50,7 +50,6 @@ function App() {
         <div className='main-aside__wrapper'>
           <Main 
             videoDetails={videoInfo}
-            // onCurrentVideo={showVideoDetails}
           />
           <VideosRecommended 
             videosData={videoArray}  

@@ -1,0 +1,13 @@
+@use '../../App.scss' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.video-details {
+  &__wrapper {
+    @include desktop {
+      border-right: 1px solid $secondary-mercury;
+      // padding-right: 1.5rem;
+    }
+  }
+}

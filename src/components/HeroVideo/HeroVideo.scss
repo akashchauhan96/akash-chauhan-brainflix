@@ -3,12 +3,22 @@
 @use '../../styles/partials/variables' as *;
 
 .hero {
-  width: 100%;
-  // height: 100%;
+  background-color: $secondary-black;
 
   @include tablet {
-    width: 43.5rem;
+    padding: 0 2.25rem;
+  }
+
+  @include desktop {
+    padding: 0;
     margin: 0 auto;
+  }
+
+  &__container {
+    @include desktop {
+      width: 56.8rem;
+      margin: 0 auto;
+    }
   }
   
   &__video {

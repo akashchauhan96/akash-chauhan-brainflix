@@ -6,11 +6,6 @@
 .comment-array {
   background-color: $primary-white;
 
-  // @include desktop {
-  //   width: 63.75rem;
-  //   margin: 0 auto;
-  // }
-
   &__container {
     display: flex;
     gap: 1rem;
@@ -21,9 +16,9 @@
       padding: 1.5rem 0;
     }
 
-    // @include desktop {
-    //   margin: 0 16rem;
-    // }
+    @include desktop {
+      padding: 1.5rem 1.5rem 1.5rem 0;
+    }
   }
 
   &__avatar-container {

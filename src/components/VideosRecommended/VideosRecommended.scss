@@ -9,7 +9,10 @@
 
   @include tablet {
     padding: 2.25rem;
-    // width: 18rem;
+  }
+
+  @include desktop {
+    padding: 2.25rem 1.5rem;
   }
 
   &__title {
