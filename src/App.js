@@ -14,18 +14,6 @@ function App() {
     return video.id !== videoDetails[0].id;
   }))
 
-  // console.log(videoArray);
-
-  // function showVideoDetails(videoId) {
-
-  //   const newVideoDetails = videoDetails.find((video) => {
-  //     return video.id === videoId
-  //   })
-
-  //   setVideoInfo(newVideoDetails);
-
-  // }
-
   function showVideoArray(videoId) {
     const findCurrentVideo = videosData.find((video) => {
       return video.id === videoInfo.id
