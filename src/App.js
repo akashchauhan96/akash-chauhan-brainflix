@@ -5,6 +5,7 @@ import HeroVideo from './components/HeroVideo/HeroVideo.js';
 import VideosRecommended from './components/VideosRecommended/VideosRecommended.js'
 import videosData from './assets/data/videos.json'
 import videoDetails from './assets/data/video-details.json'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react'
 
 function App() {
