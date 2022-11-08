@@ -31,7 +31,13 @@ function App() {
   
   return (
     <>
-      <Header />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<MainVideoPage videoInfo={videoInfo}/>} />
+          <Route path='/video/:id' element={<MainVideoPage />} />
+          <Route path='/upload' element={<UploadPage />} />
+          <Route path="*" element={<NotFound />} />
       <HeroVideo
         videoDetails={videoInfo}
       />
@@ -45,7 +51,9 @@ function App() {
             onVideosRecommended={showVideoArray}
           />
         </div>
-      </main>  
+      </main>
+        </Routes> 
+      </BrowserRouter> 
     </>
   );
 }
