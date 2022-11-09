@@ -1,8 +1,5 @@
 import './App.scss';
 import Header from './components/Header/Header.js';
-import Main from './components/Main/Main.js'
-import HeroVideo from './components/HeroVideo/HeroVideo.js';
-import VideosRecommended from './components/VideosRecommended/VideosRecommended.js'
 import videosData from './assets/data/videos.json'
 import videoDetails from './assets/data/video-details.json'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -38,20 +35,6 @@ function App() {
           <Route path='/video/:id' element={<MainVideoPage />} />
           <Route path='/upload' element={<UploadPage />} />
           <Route path="*" element={<NotFound />} />
-      <HeroVideo
-        videoDetails={videoInfo}
-      />
-      <main>
-        <div className='main-aside__wrapper'>
-          <Main 
-            videoDetails={videoInfo}
-          />
-          <VideosRecommended 
-            videosData={videoArray}  
-            onVideosRecommended={showVideoArray}
-          />
-        </div>
-      </main>
         </Routes> 
       </BrowserRouter> 
     </>
