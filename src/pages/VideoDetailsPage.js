@@ -2,7 +2,7 @@ import Main from './components/Main/Main.js'
 import HeroVideo from './components/HeroVideo/HeroVideo.js';
 import VideosRecommended from './components/VideosRecommended/VideosRecommended.js'
 
-function MainVideoPage() {
+function VideoDetailsPage() {
   return (
     <>
       <HeroVideo
@@ -23,4 +23,4 @@ function MainVideoPage() {
   )
 }
 
-export default MainVideoPage
+export default VideoDetailsPage
