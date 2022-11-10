@@ -1,9 +1,9 @@
 import Main from '../components/Main/Main'
-import HeroVideo from '../components/HeroVideo/HeroVideo.js';
-import VideosRecommended from '../components/VideosRecommended/VideosRecommended.js'
+import HeroVideo from '../components/HeroVideo/HeroVideo';
+import VideosRecommended from '../components/VideosRecommended/VideosRecommended'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 export default function Homepage() {
 
@@ -67,22 +67,24 @@ export default function Homepage() {
   //   })
   // }, [id])
 
-  return (
-    <>
-      <HeroVideo
-        videoDetails={videoInfo}
-      />
-      <main>
-        <div className='main-aside__wrapper'>
-          <Main 
-            videoDetails={videoInfo}
-          />
-          <VideosRecommended 
-            videosData={videoArray}  
-            // onVideosRecommended={showVideoArray}
-          />
-        </div>
-      </main>
-    </>
-  )
+  if(videoInfo) {
+    return (
+      <>
+        <HeroVideo
+          videoDetails={videoInfo}
+        />
+        <main>
+          <div className='main-aside__wrapper'>
+            <Main 
+              videoDetails={videoInfo}
+            />
+            <VideosRecommended 
+              videosData={videoArray}  
+              // onVideosRecommended={showVideoArray}
+            />
+          </div>
+        </main>
+      </>
+    )
+  }
 }
