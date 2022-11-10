@@ -5,8 +5,8 @@ function VideosRecommended(props) {
 
   const videosData = props.videosData;
   console.log(videosData);
-  const showVideoArray = props.onVideosRecommended;
-  console.log(showVideoArray);
+  // const showVideoArray = props.onVideosRecommended;
+  // console.log(showVideoArray);
   return (
     <aside className='recommended-videos'>
       <p className='recommended-videos__title'>Next Videos</p>
@@ -19,7 +19,7 @@ function VideosRecommended(props) {
               title={videoItem.title}
               channel={videoItem.channel}
               image={videoItem.image}
-              showVideoArray={showVideoArray}
+              // showVideoArray={showVideoArray}
             />
           )
         })}
