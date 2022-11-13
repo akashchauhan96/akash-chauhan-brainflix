@@ -1,26 +1,22 @@
 import Main from '../components/Main/Main'
 import HeroVideo from '../components/HeroVideo/HeroVideo';
 import VideosRecommended from '../components/VideosRecommended/VideosRecommended'
+import '../utils/api-utils';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom';
+import { getVideoDetailsById, getVideosArray } from '../utils/api-utils';
 
 export default function Homepage() {
 
   const [videoInfo, setVideoInfo] = useState(null);
   const [videoArray, setVideoArray] = useState(null);
 
-  //Deconstruct axious url link
-  const mainURL = 'https://project-2-api.herokuapp.com/'
-  const videosEndpoint = 'videos/'
-  const apiKey = '?api_key=cd79fcde-0845-4d56-ab55-a675677dca40'
-
   const { id } = useParams();
   const selectedVideoId = id;
-  // console.log(selectedVideoId);
   
   useEffect(() => {
-    axios.get(`${mainURL}${videosEndpoint}${apiKey}`)
+    axios.get(getVideosArray())
     .then((resp) => {
     const initialVideosArray = resp.data.filter((video) => {
       return video.id !== resp.data[0].id
@@ -29,7 +25,7 @@ export default function Homepage() {
     return resp.data[0].id
     })
     .then((firstVidId) => {
-      axios.get(`${mainURL}${videosEndpoint}${firstVidId}${apiKey}`)
+      axios.get(getVideoDetailsById(firstVidId))
       .then((resp) => {
         setVideoInfo(resp.data);
       })
@@ -40,7 +36,7 @@ export default function Homepage() {
   }, [])
 
   useEffect(() => {
-    axios.get(`${mainURL}${videosEndpoint}${apiKey}`)
+    axios.get(getVideosArray())
     .then((resp) => {
       const findCurrentVideo = resp.data.find((video) => {
         return video.id === videoInfo.id
@@ -52,7 +48,7 @@ export default function Homepage() {
       setVideoArray([findCurrentVideo, ...videosArrayWithoutSelectedVid]);
     })
     .then(() => {
-      axios.get(`${mainURL}${videosEndpoint}${selectedVideoId}${apiKey}`)
+      axios.get(getVideoDetailsById(selectedVideoId))
       .then((resp) => {
         setVideoInfo(resp.data);
       })
