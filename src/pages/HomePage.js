@@ -1,7 +1,7 @@
 import Main from '../components/Main/Main'
 import HeroVideo from '../components/HeroVideo/HeroVideo';
 import VideosRecommended from '../components/VideosRecommended/VideosRecommended'
-import '../utils/api-utils';
+import { getVideosArray, getVideoDetailsById } from '../utils/api-utils';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom';
