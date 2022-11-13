@@ -1,0 +1,221 @@
+@use '../../App.scss' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+main {
+  border-top: 1px solid $secondary-mercury;
+}
+
+.upload {
+  padding: 1.5rem 1rem;
+
+  @include tablet {
+    padding: 2.25rem 1.5rem 1.5rem;
+  }
+
+  @include desktop {
+    padding: 0;
+    width: 63.75rem;
+    margin: 2.25rem auto;
+  }
+
+  &__title {
+    color: $primary-black;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+      font-size: 2.0625rem;
+      line-height: 2.75rem;
+      margin-bottom: 0;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid $secondary-mercury;
+    }
+  }
+}
+
+.video-main {
+  @include tablet {
+    margin-top: 1.5rem;
+  }
+
+  @include desktop {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $secondary-mercury;
+  }
+
+  &__video-figure {
+    @include desktop {
+      width: 32.5%;
+    }
+  }
+  &__thumbnail-text {
+    font-size: .8125rem;
+    line-height: 1.125rem;
+    color: $primary-silver;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: .25rem;
+  }
+  
+  &__video-thumbnail {
+    width: 100%;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+    vertical-align: bottom;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include desktop {
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__video-info {
+    @include desktop {
+      flex: 1;
+    }
+  }
+
+  &__title-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  &__title-label {
+    font-size: .8125rem;
+    line-height: 1.125rem;
+    color: $primary-silver;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: .25rem;
+  }
+
+  &__title-input {
+    font-family: "AvenirNextLTPro";
+    padding: 0.75rem;
+    font-size: .8125rem;
+    background-color: $secondary-alabaster;
+    border: 1px solid $secondary-mercury;
+    border-radius: 0.25rem;
+
+    &::placeholder {
+      color: $secondary-black;
+    }
+  }
+
+  &__description-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+      margin-bottom: 0;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid $secondary-mercury;
+    }
+    
+    @include desktop {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__description-label {
+    font-size: .8125rem;
+    line-height: 1.125rem;
+    color: $primary-silver;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: .25rem;
+  }
+
+  &__description-input {
+    font-family: "AvenirNextLTPro";
+    padding: 0.75rem;
+    font-size: .8125rem;
+    height: 6rem;
+    background-color: $secondary-alabaster;
+    border: 1px solid $secondary-mercury;
+    border-radius: 0.25rem;
+    resize: none;
+
+    &::placeholder {
+      color: $secondary-black;
+    }
+  }
+}
+
+.button-section {
+  @include tablet {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  &__publish {
+    color: $primary-white;
+    border: none;
+    width: 100%;
+    background-color: $primary-blue;
+    border-radius: .25rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+      min-width: 9.375rem;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      background-color: $secondary-blue;
+    }
+  }
+
+  &__publish-text {
+    width: calc(100% - 3rem);
+    font-size: .8125rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__cancel {
+    text-align: center;
+    color: $primary-blue;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    width: 100%;
+    background-color: $primary-white;
+    border-radius: .25rem;
+    padding: 0.5rem;
+    height: 2.5rem;
+    margin-bottom: 1.5rem;
+
+    &:hover {
+      color: $secondary-blue;
+    }
+
+    @include tablet {
+      min-width: 9.375rem;
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+

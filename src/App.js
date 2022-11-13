@@ -1,8 +1,6 @@
 import './App.scss';
-import Header from './components/Header/Header.js';
-// import videosData from './assets/data/videos.json'
-// import videoDetails from './assets/data/video-details.json'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from './components/Header/Header.js';
 import HomePage from './pages/HomePage'
 import UploadPage from './pages/UploadPage'
 import NotFound from './pages/NotFound'

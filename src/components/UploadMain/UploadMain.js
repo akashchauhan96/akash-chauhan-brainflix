@@ -8,35 +8,43 @@ export default function UploadMain() {
     <main>
       <section className='upload'>
         <h1 className='upload__title'>Upload Video</h1>
-        <div className='upload__main-section'>
-          <figure className='video'>
-            <figcaption className='video__thumbnail-text'>Video Thumbnail</figcaption>
-            <img src={videoPreview} alt='Video Thumbnail' />
+        <div className='video-main'>
+          <figure className='video-main__video-figure'>
+            <figcaption className='video-main__thumbnail-text'>Video Thumbnail</figcaption>
+            <img src={videoPreview} alt='Video Thumbnail' className='video-main__video-thumbnail'/>
           </figure>
-          <div className='video-info'>
-            <label className='video-info__title'></label>
-            <input type='text' name='video-title' className='video-info__title-input'></input>
-            <label className='video-info__description'></label>
-            <textarea
-              name="video-description"
-              className="c__comment"
-              placeholder="Add a new comment"
-            ></textarea>
+          <div className='video-main__video-info'>
+            <div className='video-main__title-box'>
+              <label className='video-main__title-label'>Title Your Video</label>
+              <input
+                type='text' 
+                name='video-title' className='video-main__title-input'
+                placeholder='Add a title to your video'>
+              </input>
+            </div>
+            <div className='video-main__description-box'>
+              <label className='video-main__description-label'>Add A Video Description</label>
+              <textarea
+                name="video-description"
+                className="video-main__description-input"
+                placeholder="Add a description to your video"
+              ></textarea>
+            </div>
           </div>  
         </div>
-        <div className='upload__button-section'>
-          <Link to='/upload/submit'>
-            <button className="upload__publish">
+        <div className='button-section'>
+          <Link to='/upload/submit' style={{textDecoration: 'none'}}>
+            <button className="button-section__publish">
               <img 
-                className="upload__publish-icon" 
+                className="button-section__publish-icon" 
                 src={publishIcon}
                 alt="Publish Icon"
               />
-              <span className="upload__publish-text">Upload</span>
+              <span className="button-section__publish-text">Publish</span>
             </button>
           </Link>
-          <Link to='/'>
-            <button className='upload__cancel'>Cancel</button>
+          <Link to='/' style={{textDecoration: 'none'}}>
+            <button className='button-section__cancel'>Cancel</button>
           </Link>
         </div>
       </section>

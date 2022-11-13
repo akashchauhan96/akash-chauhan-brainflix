@@ -5,7 +5,7 @@ import avatarImage from '../../assets/images/Mohan-muruge.jpg'
 import uploadIcon from '../../assets/icons/upload.svg'
 import { Link } from 'react-router-dom'
 
-function Header() {
+export default function Header() {
   return (
     <header className="header">
       <div className="header__outer-container">
@@ -28,7 +28,7 @@ function Header() {
             src={avatarImage}
             alt="Avatar Image of Mohan Muruge"
           />
-          <Link to="/upload">
+          <Link to="/upload" style={{textDecoration: 'none'}}>
             <button className="header__upload-button">
               <img 
                 className="header__upload-icon" 
@@ -43,5 +43,3 @@ function Header() {
     </header>
   )
 }
-
-export default Header

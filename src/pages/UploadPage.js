@@ -1,5 +1,9 @@
+import UploadMain from '../components/UploadMain/UploadMain'
+
 export default function UploadPage() {
   return (
-    <h1>Hello</h1>
+    <>
+      <UploadMain />
+    </>
   )
 }

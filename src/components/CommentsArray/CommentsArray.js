@@ -1,6 +1,6 @@
 import './CommentsArray.scss'
 
-function CommentsArray({commentsList}) {
+export default function CommentsArray({commentsList}) {
   
   
   function DateGenerator(date) {
@@ -37,5 +37,3 @@ function CommentsArray({commentsList}) {
     </section>
   )
 }
-
-export default CommentsArray;
