@@ -3,6 +3,7 @@ import logo from '../../assets/logo/BrainFlix-logo.svg'
 import searchIcon from '../../assets/icons/search.svg'
 import avatarImage from '../../assets/images/Mohan-muruge.jpg'
 import uploadIcon from '../../assets/icons/upload.svg'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
@@ -27,14 +28,16 @@ function Header() {
             src={avatarImage}
             alt="Avatar Image of Mohan Muruge"
           />
-          <button className="header__upload-button">
-            <img 
-              className="header__upload-icon" 
-              src={uploadIcon}
-              alt="Upload Icon"
-            />
-            <span className="header__upload-text">Upload</span>
-          </button>
+          <Link to="/upload">
+            <button className="header__upload-button">
+              <img 
+                className="header__upload-icon" 
+                src={uploadIcon}
+                alt="Upload Icon"
+              />
+              <span className="header__upload-text">Upload</span>
+            </button>
+          </Link>
         </div>
       </div>
     </header>
