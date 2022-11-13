@@ -14,7 +14,7 @@ export default function App() {
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/video/:id' element={<HomePage />} />
+          <Route path='/videos/:id' element={<HomePage />} />
           <Route path='/upload' element={<UploadPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes> 

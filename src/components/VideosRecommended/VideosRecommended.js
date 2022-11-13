@@ -1,12 +1,8 @@
 import './VideosRecommended.scss'
 import VideoItem from '../VideoItem/VideoItem.js'
 
-function VideosRecommended(props) {
-
-  const videosData = props.videosData;
-  console.log(videosData);
-  // const showVideoArray = props.onVideosRecommended;
-  // console.log(showVideoArray);
+export default function VideosRecommended({ videosData }) {
+  // console.log(videosData);
   return (
     <aside className='recommended-videos'>
       <p className='recommended-videos__title'>Next Videos</p>
@@ -19,7 +15,6 @@ function VideosRecommended(props) {
               title={videoItem.title}
               channel={videoItem.channel}
               image={videoItem.image}
-              // showVideoArray={showVideoArray}
             />
           )
         })}
@@ -27,5 +22,3 @@ function VideosRecommended(props) {
     </aside>
   )
 }
-
-export default VideosRecommended

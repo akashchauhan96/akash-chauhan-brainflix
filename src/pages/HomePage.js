@@ -3,48 +3,33 @@ import HeroVideo from '../components/HeroVideo/HeroVideo';
 import VideosRecommended from '../components/VideosRecommended/VideosRecommended'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 export default function Homepage() {
 
   const [videoInfo, setVideoInfo] = useState(null);
-  const [videoArray, setVideoArray] = useState([]);
-
-    // function showVideoArray(videoId) {
-  //   const findCurrentVideo = videosData.find((video) => {
-  //     return video.id === videoInfo.id
-  //   })
-  //   const newVideoArray = videoArray.filter((video) => {
-  //     return video.id !== videoId
-  //   })
-  //   const newVideoDetails = videoDetails.find((video) => {
-  //     return video.id === videoId
-  //   })
-
-  //   setVideoArray([findCurrentVideo, ...newVideoArray]);
-  //   setVideoInfo(newVideoDetails);
-  // }
+  const [videoArray, setVideoArray] = useState(null);
 
   //Deconstruct axious url link
   const mainURL = 'https://project-2-api.herokuapp.com/'
   const videosEndpoint = 'videos/'
   const apiKey = '?api_key=cd79fcde-0845-4d56-ab55-a675677dca40'
 
-  // const { id } = useParams();
-  // const videoId = id;
+  const { id } = useParams();
+  const selectedVideoId = id;
+  // console.log(selectedVideoId);
   
   useEffect(() => {
     axios.get(`${mainURL}${videosEndpoint}${apiKey}`)
     .then((resp) => {
-    const videosList = resp.data.filter((video) => {
+    const initialVideosArray = resp.data.filter((video) => {
       return video.id !== resp.data[0].id
     })
-    setVideoArray(videosList);
+    setVideoArray(initialVideosArray);
     return resp.data[0].id
     })
     .then((firstVidId) => {
-      console.log(firstVidId);
-      axios.get(`${mainURL}${videosEndpoint}${firstVidId}/${apiKey}`)
+      axios.get(`${mainURL}${videosEndpoint}${firstVidId}${apiKey}`)
       .then((resp) => {
         setVideoInfo(resp.data);
       })
@@ -54,18 +39,28 @@ export default function Homepage() {
     })
   }, [])
 
-  // useEffect(() => {
-  //   axios.get(`${mainURL}${videosEndpoint}${videoId}${apiKey}`)
-  //   .then((resp) => {
-  //   const removeVidFromArray = resp.data.filter((video) => {
-  //     return video.id !== resp.data[0].id
-  //   })
-  //   setVideoInfo(resp.data[0]);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   })
-  // }, [id])
+  useEffect(() => {
+    axios.get(`${mainURL}${videosEndpoint}${apiKey}`)
+    .then((resp) => {
+      const findCurrentVideo = resp.data.find((video) => {
+        return video.id === videoInfo.id
+      })
+      console.log("Video currently displayed", findCurrentVideo);
+      const videosArrayWithoutSelectedVid = videoArray.filter((video) => {
+        return video.id !== selectedVideoId;
+      })
+      setVideoArray([findCurrentVideo, ...videosArrayWithoutSelectedVid]);
+    })
+    .then(() => {
+      axios.get(`${mainURL}${videosEndpoint}${selectedVideoId}${apiKey}`)
+      .then((resp) => {
+        setVideoInfo(resp.data);
+      })
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }, [id])
 
   if(videoInfo) {
     return (
@@ -79,8 +74,7 @@ export default function Homepage() {
               videoDetails={videoInfo}
             />
             <VideosRecommended 
-              videosData={videoArray}  
-              // onVideosRecommended={showVideoArray}
+              videosData={videoArray}
             />
           </div>
         </main>
