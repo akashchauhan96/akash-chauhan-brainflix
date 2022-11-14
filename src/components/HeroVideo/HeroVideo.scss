@@ -17,6 +17,7 @@
   &__container {
     @include desktop {
       width: 56.8rem;
+      height: 31.75rem;
       margin: 0 auto;
     }
   }
@@ -24,6 +25,12 @@
   &__video {
     display: block;
     width: 100%;
+    max-height: 30rem;
     object-fit: cover;
+
+    @include desktop {
+      max-height: none;
+      height: 100%;
+    }
   }
 }
