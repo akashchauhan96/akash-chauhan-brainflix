@@ -7,9 +7,10 @@ export default function UploadMessage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       navigate('/')
     }, 5000)
+    return () => clearTimeout(timer);
   }, [])
 
   return (
