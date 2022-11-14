@@ -13,6 +13,6 @@ export default function UploadMessage() {
   }, [])
 
   return (
-    <h1>Congratulations!! You have succssfully uploaded your video. Please wait for a few seconds before we redirect you back to the Home Page. </h1>
+    <h1 className='upload-complete'>Congratulations!! You have succssfully uploaded your video. Please wait for a few seconds before we redirect you back to the Home Page. </h1>
   )
 }
