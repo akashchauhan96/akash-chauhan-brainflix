@@ -28,7 +28,7 @@ export default function Header() {
             src={avatarImage}
             alt="Avatar Image of Mohan Muruge"
           />
-          <Link to="/upload" className='header__upload-link' style={{textDecoration: 'none'}}>
+          <Link to="/upload" className='header__upload-link'>
             <button className="header__upload-button">
               <img 
                 className="header__upload-icon" 
