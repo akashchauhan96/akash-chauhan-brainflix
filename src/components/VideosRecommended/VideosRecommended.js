@@ -2,7 +2,7 @@ import './VideosRecommended.scss'
 import VideoItem from '../VideoItem/VideoItem.js'
 
 export default function VideosRecommended({ videosData }) {
-  // console.log(videosData);
+
   return (
     <aside className='recommended-videos'>
       <p className='recommended-videos__title'>Next Videos</p>

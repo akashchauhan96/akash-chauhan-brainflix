@@ -1,6 +1,6 @@
 import './HeroVideo.scss'
 
-function HeroVideo({videoDetails}) {
+export default function HeroVideo({videoDetails}) {
   return (
     <section className='hero' >
       <div className='hero__container' >
@@ -9,5 +9,3 @@ function HeroVideo({videoDetails}) {
     </section>
   )
 }
-
-export default HeroVideo

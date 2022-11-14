@@ -2,7 +2,7 @@ import './VideoDescription.scss';
 import viewsIcon from '../../assets/icons/views.svg'
 import likesIcon from '../../assets/icons/likes.svg'
 
-function VideoDescription({videoDetails}) {
+export default function VideoDescription({videoDetails}) {
   
   function DateGenerator(date) {
     // console.log(date);
@@ -42,5 +42,3 @@ function VideoDescription({videoDetails}) {
     </section>
   )
 }
-
-export default VideoDescription

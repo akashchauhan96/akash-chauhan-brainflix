@@ -7,7 +7,7 @@ export default function VideoItem(props) {
 
   return (
     <>
-      <Link to={`/videos/${id}`}>
+      <Link to={`/videos/${id}`} className="recommended-videos__video-link">
         <div className='recommended-videos__single-wrapper' >
           <img src={image} alt={title} className='recommended-videos__videos'/>
           <div className='recommended-videos__video-info'>

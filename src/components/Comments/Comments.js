@@ -3,8 +3,8 @@ import avatarImage from '../../assets/images/Mohan-muruge.jpg'
 import addComment from '../../assets/icons/add_comment.svg'
 import CommentsArray from '../CommentsArray/CommentsArray.js'
 
-function Comments({videoDetails}) {
-  // console.log(videoDetails);
+export default function Comments({videoDetails}) {
+
   return (
     <section className="comment-section">
       <p className='comment-section__total-number'>{videoDetails.comments.length} Comments</p>
@@ -46,5 +46,3 @@ function Comments({videoDetails}) {
     </section>
   )
 }
-
-export default Comments;

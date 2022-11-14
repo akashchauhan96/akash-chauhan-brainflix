@@ -4,6 +4,9 @@
 @use '../../styles/partials/variables' as *;
 
 .recommended-videos {
+  &__video-link {
+    text-decoration: none;
+  }
   &__single-wrapper {
     display: flex;
     gap: 1rem;
