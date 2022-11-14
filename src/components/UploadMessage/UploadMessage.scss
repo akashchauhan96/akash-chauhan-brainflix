@@ -1,0 +1,18 @@
+@use '../../App.scss' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1rem;
+
+  @include tablet {
+    margin: 2.25rem;
+  }
+
+  @include desktop {
+    width: 63.75rem;
+    margin: 2.25rem auto;
+  }
+}
