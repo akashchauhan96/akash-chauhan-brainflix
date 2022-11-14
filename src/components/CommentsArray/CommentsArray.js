@@ -4,7 +4,7 @@ export default function CommentsArray({commentsList}) {
   
   
   function DateGenerator(date) {
-    // console.log(date);
+    
     const newDate = new Date(date);
     let month = newDate.getMonth() + 1;
     if (month<10) {

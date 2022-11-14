@@ -5,7 +5,6 @@ import likesIcon from '../../assets/icons/likes.svg'
 export default function VideoDescription({videoDetails}) {
   
   function DateGenerator(date) {
-    // console.log(date);
     const newDate = new Date(date);
     let month = newDate.getMonth() + 1;
     if (month<10) {
