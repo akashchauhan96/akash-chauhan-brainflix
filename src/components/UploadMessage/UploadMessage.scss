@@ -1,6 +1,7 @@
 @use '../../App.scss' as *;
 @use '../../styles/partials/fonts' as *;
 @use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
 
 h1 {
   color: $primary-black;
