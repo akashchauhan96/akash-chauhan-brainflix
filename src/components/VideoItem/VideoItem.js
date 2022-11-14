@@ -2,7 +2,6 @@ import './VideoItem.scss'
 import { Link } from 'react-router-dom'
 
 export default function VideoItem(props) {
-  // console.log("Video Items ", props);
   const {id, title, channel, image} = props;
 
   return (
