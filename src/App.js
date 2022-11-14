@@ -14,6 +14,7 @@ export default function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/videos/:id' element={<HomePage />} />
           <Route path='/upload' element={<UploadPage />} />
+          <Route path='/upload/complete' element={<UploadComplete />} />
           <Route path="*" element={<NotFound />} />
         </Routes> 
       </BrowserRouter> 

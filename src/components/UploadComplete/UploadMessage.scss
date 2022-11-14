@@ -1,0 +1,9 @@
+@use '../../App.scss' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+h1 {
+  font-size: 3rem;
+  width: 30%;
+  text-align: center;
+}

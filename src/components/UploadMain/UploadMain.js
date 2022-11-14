@@ -33,7 +33,7 @@ export default function UploadMain() {
           </div>  
         </div>
         <div className='button-section'>
-          <Link to='/upload/submit' style={{textDecoration: 'none'}}>
+          <Link to='/upload/complete' style={{textDecoration: 'none'}}>
             <button className="button-section__publish">
               <img 
                 className="button-section__publish-icon" 
