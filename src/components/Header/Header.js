@@ -9,11 +9,13 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__outer-container">
-        <img
-          className="header__logo-img"
-          src={logo}
-          alt="BrainFlix Logo Image"
-        />
+        <Link to='/' className="header__logo-link">
+          <img
+            className="header__logo-img"
+            src={logo}
+            alt="BrainFlix Logo Image"
+          />
+        </Link>
         <div className="header__inner-container">
           <div className="header__search-box">
             <img
