@@ -1,9 +1,9 @@
-import UploadMain from '../components/UploadMain/UploadMain'
+import Upload from '../components/Upload/Upload'
 
 export default function UploadPage() {
   return (
     <>
-      <UploadMain />
+      <Upload />
     </>
   )
 }

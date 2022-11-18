@@ -1,9 +1,9 @@
-import './UploadMain.scss'
+import './Upload.scss'
 import videoPreview from '../../assets/images/Upload-video-preview.jpg'
 import { Link } from 'react-router-dom'
 import publishIcon from '../../assets/icons/publish.svg'
 
-export default function UploadMain() {
+export default function Upload() {
   return (
     <main>
       <section className='upload'>
