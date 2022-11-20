@@ -4,20 +4,57 @@ import publishIcon from '../../assets/icons/publish.svg'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { v4 as uuidv4} from 'uuid';
+import axios from 'axios'
 
 export default function Upload() {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+  const serverURL = process.env.REACT_APP_SERVER_URL;
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newVidName = e.target[0].value;
+    const newVidTitle = e.target[0].value;
     const newVidDescription = e.target[1].value;
-  }
-  
+      //   id: uuidv4(),
+    //   title: newVidTitle,
+    //   channel: "Amoney",
+    //   image: "",
+    //   description: newVidDescription,
+    //   views: "1,000,000",
+    //   duration: "4.01",
+    //   video: "https://project-2-api.herokuapp.com/stream",
+    //   timestamp: Date.now(),
+    //   comments: [
+    //     {
+    //       id: uuidv4(),
+    //       name: "Kash",
+    //       comment: "Awesome video broski",
+    //       likes: 0,
+    //       timestamp: Date.now(),
+    //     },
+    //     {
+    //       id: uuidv4(),
+    //       name: "Kash",
+    //       comment: "Awesome video broski",
+    //       likes: 0,
+    //       timestamp: Date.now(),
+    //     }
+    //   ]
+    // }
+
+    axios.post(`${serverURL}videos`, {
+      id: uuidv4(),
+      title: newVidTitle,
+      description: newVidDescription,
+      timestamp: Date.now()
+    })
+      .then(resp => console.log(resp))
+}
+
   const handleCancel = (e) => {
     e.preventDefault();
     navigate('/');
