@@ -3,6 +3,7 @@ import videoPreview from '../../assets/images/Upload-video-preview.jpg'
 import publishIcon from '../../assets/icons/publish.svg'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { v4 as uuidv4} from 'uuid';
 
 export default function Upload() {
 
