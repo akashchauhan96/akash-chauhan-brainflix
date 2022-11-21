@@ -5,6 +5,10 @@ import CommentsArray from '../CommentsArray/CommentsArray.js'
 
 export default function Comments({videoDetails}) {
 
+  const handleClick = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <section className="comment-section">
       <p className='comment-section__total-number'>{videoDetails.comments.length} Comments</p>
@@ -29,7 +33,7 @@ export default function Comments({videoDetails}) {
                 placeholder="Add a new comment"
               ></textarea>
             </div>
-            <button type="submit" className="comment-form__button">
+            <button type="submit" className="comment-form__button" onClick={handleClick}>
               <img 
                 className="comment-form__comment-icon"
                 src={addComment}

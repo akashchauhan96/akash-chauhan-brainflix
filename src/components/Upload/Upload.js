@@ -17,6 +17,20 @@ export default function Upload() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (e.target[0].value === '' && e.target[1].value === '') {
+      alert("Please fill out the title and description of video")
+    }
+
+    else if (e.target[0].value === '') {
+      alert("Please fill out the video title")
+    }
+
+    else if (e.target[1].value === '') {
+      alert("Please fill out the descrioption section");
+    }
+
+    else {
     const newVidTitle = e.target[0].value;
     const newVidDescription = e.target[1].value;
 
@@ -26,36 +40,17 @@ export default function Upload() {
       description: newVidDescription,
       timestamp: Date.now()
     }
-      //   id: uuidv4(),
-    //   title: newVidTitle,
-    //   channel: "Amoney",
-    //   image: "",
-    //   description: newVidDescription,
-    //   views: "1,000,000",
-    //   duration: "4.01",
-    //   video: "https://project-2-api.herokuapp.com/stream",
-    //   timestamp: Date.now(),
-    //   comments: [
-    //     {
-    //       id: uuidv4(),
-    //       name: "Kash",
-    //       comment: "Awesome video broski",
-    //       likes: 0,
-    //       timestamp: Date.now(),
-    //     },
-    //     {
-    //       id: uuidv4(),
-    //       name: "Kash",
-    //       comment: "Awesome video broski",
-    //       likes: 0,
-    //       timestamp: Date.now(),
-    //     }
-    //   ]
-    // }
 
-    axios.post(`${serverURL}videos`, JSON.stringify(newVidObject))
-      .then(resp => console.log(resp))
-}
+    axios.post(`${serverURL}videos`, newVidObject)
+      .then(resp => {
+        console.log(resp);
+        navigate(`/upload/complete`);
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+  }
 
   const handleCancel = (e) => {
     e.preventDefault();

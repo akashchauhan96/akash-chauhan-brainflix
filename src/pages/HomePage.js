@@ -30,13 +30,11 @@ export default function Homepage() {
             setVideoInfo(response.data);
           })
       }
-      else if (selectedVideoId === undefined) {
+      else {
         const initialVideosArray = resp.data.filter(video => {
           return video.id !== resp.data[0].id
         })
-        console.log(initialVideosArray);
         setVideoArray(initialVideosArray);
-        console.log(videoArray);
         axios.get(getVideoDetailsById(resp.data[0].id))
         .then(response => {
           setVideoInfo(response.data);
