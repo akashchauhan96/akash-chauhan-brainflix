@@ -113,9 +113,9 @@
       color: $secondary-black;
     }
 
-    &--active {
+    &:active {
       background-color: white;
-      border: 1px solid $secondary-black;
+      border: 1px solid $primary-blue;
     }
 
     &--error {

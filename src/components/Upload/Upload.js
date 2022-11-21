@@ -18,16 +18,8 @@ export default function Upload() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (e.target[0].value === '' && e.target[1].value === '') {
-      alert("Please fill out the title and description of video")
-    }
-
-    else if (e.target[0].value === '') {
-      alert("Please fill out the video title")
-    }
-
-    else if (e.target[1].value === '') {
-      alert("Please fill out the descrioption section");
+    if (e.target[0].value === '' || e.target[1].value === '') {
+      alert("Please fill out all the required fields!")
     }
 
     else {
@@ -42,8 +34,7 @@ export default function Upload() {
     }
 
     axios.post(`${serverURL}videos`, newVidObject)
-      .then(resp => {
-        console.log(resp);
+      .then(() => {
         navigate(`/upload/complete`);
       })
       .catch(err => {

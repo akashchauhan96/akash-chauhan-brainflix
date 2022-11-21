@@ -9,12 +9,13 @@ import { getVideoDetailsById, getVideosArray } from '../utils/api-utils';
 export default function Homepage() {
 
   const [videoInfo, setVideoInfo] = useState(null)
-  const [videoArray, setVideoArray] = useState(null);
+  const [videoArray, setVideoArray] = useState([]);
 
   const { id } = useParams();
   const selectedVideoId = id;
   
   useEffect(() => {
+    document.title = 'Brainflix Home'
     axios.get(getVideosArray())
     .then(resp => {
       const currentVid = resp.data.find(video => {
