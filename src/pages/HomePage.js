@@ -8,7 +8,7 @@ import { getVideoDetailsById, getVideosArray } from '../utils/api-utils';
 
 export default function Homepage() {
 
-  const [videoInfo, setVideoInfo] = useState(null);
+  const [videoInfo, setVideoInfo] = useState(null)
   const [videoArray, setVideoArray] = useState(null);
 
   const { id } = useParams();
@@ -16,46 +16,37 @@ export default function Homepage() {
   
   useEffect(() => {
     axios.get(getVideosArray())
-    .then((resp) => {
-    const initialVideosArray = resp.data.filter((video) => {
-      return video.id !== resp.data[0].id
-    })
-    setVideoArray(initialVideosArray);
-    return resp.data[0].id
-    })
-    .then((firstVidId) => {
-      axios.get(getVideoDetailsById(firstVidId))
-      .then((resp) => {
-        setVideoInfo(resp.data);
+    .then(resp => {
+      const currentVid = resp.data.find(video => {
+        return video.id === selectedVideoId
       })
+      if (currentVid) {
+        const newVideosArray = resp.data.filter(video => {
+          return video.id !== selectedVideoId;
+        })
+        setVideoArray(newVideosArray);
+        axios.get(getVideoDetailsById(selectedVideoId))
+          .then(response => {
+            setVideoInfo(response.data);
+          })
+      }
+      else if (selectedVideoId === undefined) {
+        const initialVideosArray = resp.data.filter(video => {
+          return video.id !== resp.data[0].id
+        })
+        console.log(initialVideosArray);
+        setVideoArray(initialVideosArray);
+        console.log(videoArray);
+        axios.get(getVideoDetailsById(resp.data[0].id))
+        .then(response => {
+          setVideoInfo(response.data);
+        })
+      }
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
     })
-  }, [])
-
-  useEffect(() => {
-    axios.get(getVideosArray())
-    .then((resp) => {
-      const findCurrentVideo = resp.data.find((video) => {
-        return video.id === videoInfo.id
-      })
-      console.log("Video currently displayed", findCurrentVideo);
-      const videosArrayWithoutSelectedVid = videoArray.filter((video) => {
-        return video.id !== selectedVideoId;
-      })
-      setVideoArray([findCurrentVideo, ...videosArrayWithoutSelectedVid]);
-    })
-    .then(() => {
-      axios.get(getVideoDetailsById(selectedVideoId))
-      .then((resp) => {
-        setVideoInfo(resp.data);
-      })
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }, [id])
+  }, [selectedVideoId])
 
   if(videoInfo) {
     return (

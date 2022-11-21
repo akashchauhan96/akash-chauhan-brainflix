@@ -19,6 +19,13 @@ export default function Upload() {
     e.preventDefault();
     const newVidTitle = e.target[0].value;
     const newVidDescription = e.target[1].value;
+
+    const newVidObject = {
+      id: uuidv4(),
+      title: newVidTitle,
+      description: newVidDescription,
+      timestamp: Date.now()
+    }
       //   id: uuidv4(),
     //   title: newVidTitle,
     //   channel: "Amoney",
@@ -46,12 +53,7 @@ export default function Upload() {
     //   ]
     // }
 
-    axios.post(`${serverURL}videos`, {
-      id: uuidv4(),
-      title: newVidTitle,
-      description: newVidDescription,
-      timestamp: Date.now()
-    })
+    axios.post(`${serverURL}videos`, JSON.stringify(newVidObject))
       .then(resp => console.log(resp))
 }
 
